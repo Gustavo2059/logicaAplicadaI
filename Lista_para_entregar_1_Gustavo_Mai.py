@@ -78,7 +78,7 @@ preco = preco - (preco * 0.25)
 
 #saida
 
-print(preco)
+print(f'Preço com 25% de desconto é: {preco}')
 
 print("6° - Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e escreva a idade dessa pessoa em dias. Considerar ano com 365 dias e mês com 30 dias.")
 
