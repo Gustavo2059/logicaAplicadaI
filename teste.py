@@ -1,8 +1,8 @@
 #Declarações
 alunos = []
-notas = []
-media = []
-situacao = []
+listNota1 = []
+listNota2 = []
+listNota3 = []
 #Classes
 class Aluno:
     def __init__(self, nome, nota1, nota2, nota3):
@@ -38,13 +38,7 @@ while True:
         print('Nota inválida')
         break
     else:
-        notas.append(inputNotas)
+        listNota1.append(inputNotas)
 
-for x, y, z in zip(alunos, notas, ):
-
-
-
-aluno = Aluno("joao", 1, 2, 3)
-
-print(aluno.CalculoMedia())
-print(aluno.nome)
+for x, y, z in zip(alunos, listNota1, listNota2, listNota3 ):
+    print(x, y, z)
