@@ -8,30 +8,36 @@ def classificar_imc (nome: str, imc: float) -> str:
     else:
         return f'{nome} está obeso'
 
-listNomes = []
-listImc = []
+def main():
+    list = [] #armazena nome, imc e classificação
 
-while True:
-    nome = input('Digite um nome ou ("sair" para encerrar): ')
-    if not nome.isalpha():
-        print('Digite um nome válido')
-        continue
-    elif nome.lower() == 'sair':
-        break
-    else:
-        listNomes.append(nome)
-        while True:
-            imc = input('Digite o imc: ')
-            if not imc.isnumeric():
-                print('Digite um valor válido')
-                continue
-            else:
-                imc = float(imc)
-                listImc.append(imc)
-                break
+    while True:
+        nome = input('Digite um nome ou ("sair" para encerrar): ')
+        if nome.lower() == 'sair':
+            print('\n Programa encerrado')
+            break
+        try:
+            imc = float(input('Digite o IMC: '))
+            classificacao = classificar_imc(nome, imc)
+            list.append((nome, imc, classificacao))
+        except ValueError:
+            print("Erro: Digite um valor válido")
 
-for i, x in zip(listNomes, listImc):
-    print(classificar_imc(i, x))
+    if list:
+        print('\n Ranking de IMC (crescente)')
+        list_ordenada = sorted(list, key=lambda item: item[1])
+        for pos, (nome, imc, classificacao) in enumerate(list_ordenada, start=1):
+            print(f'{pos}° lugar - {nome}: IMC = {imc:.2f} -> {classificacao}')
+
+        imcs = [imc for _, imc, _ in list]
+        media_imc = sum(imcs)/len(imcs)
+        print(f'\nMédia dos IMCs: {media_imc:.2f}')
+
+if __name__ == '__main__':
+    main()
+
+
+
 
 
 
