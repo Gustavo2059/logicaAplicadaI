@@ -7,7 +7,7 @@ if a != 0:
     if delta < 0:
         print('A equação não possui raízes reais')
     else:
-    #Bhaskara
+        #Bhaskara
     x1 = (-b + (delta**(1/2))) / (2 * a)
     x2 = (-b - (delta**(1/2))) / (2 * a)
     if delta == 0:
