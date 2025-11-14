@@ -1,7 +1,7 @@
 class Client():
 #Classe que representa um cliente e seus dados
     #constructor
-    def __init__(self,name, cpf, address, addressNumber, addressComplement, dtBirth, phone, email):
+    def __init__(self,name, cpf:int, address, addressNumber:int, addressComplement, dtBirth, phone:int, email):
         #atributos privados
         self.__name = name
         self.__cpf = cpf

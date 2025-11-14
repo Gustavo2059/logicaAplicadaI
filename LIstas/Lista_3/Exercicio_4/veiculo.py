@@ -1,5 +1,6 @@
-class Veiculo():
-    def __init__(self, marca, modelo, ano):
+from abc import ABC, abstractmethod
+class Veiculo(ABC):
+    def __init__(self, marca, modelo, ano:int):
         self.marca = marca
         self.modelo = modelo
         self.ano = ano
@@ -9,6 +10,7 @@ class Veiculo():
                 f'Modelo: {self.modelo}\n'
                 f'Ano: {self.ano}')
 
+    @abstractmethod
     def mover(self):
-        return f'O Veículo está rodando em {None}'
+        pass
 

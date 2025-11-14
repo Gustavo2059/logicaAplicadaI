@@ -1,7 +1,7 @@
 class Account():
     #Clase que representa uma conta bancária
     #constructor
-    def __init__(self, agency, agency_dig, code):
+    def __init__(self, agency:int, agency_dig:int, code:int):
         self.__agency = agency
         self.__agency_dig = agency_dig
         self.__code = code

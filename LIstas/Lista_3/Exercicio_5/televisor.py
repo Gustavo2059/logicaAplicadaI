@@ -2,7 +2,7 @@ from abc import abstractmethod
 from conectividade import Conectividade
 
 class Televisor(Conectividade):
-    def __init__(self, marca, modelo, tamanho):
+    def __init__(self, marca, modelo, tamanho:int):
         self.marca = marca
         self.modelo = modelo
         self.tamanho = tamanho

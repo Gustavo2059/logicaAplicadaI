@@ -2,29 +2,27 @@
 from account import Account
 
 #Classes
-class SavingsAccount(Account):
-    # Representação de uma conta corrente
-    # Constructor herdando atributos da classe Account
-    def __init__(self, account_number, account_dig, balance, agency, agency_dig, code):
+class SavingAccount(Account):
+    #Representação de uma conta corrente
+    #Constructor herdando atributos da classe Account
+    def __init__(self, account_number:int, account_dig:int, balance:float, agency:int, agency_dig:int, code:int):
         super().__init__(agency, agency_dig, code)
         self.__account_number = account_number
         self.__account_dig = account_dig
         self.__balance = balance
 
-    # Getters
+    #Getters
     @property
     def account_number(self):
         return self.__account_number
-
     @property
     def account_dig(self):
         return self.__account_dig
-
     @property
     def balance(self):
         return self.__balance
 
-    # Setters
+    #Setters
 
     @account_number.setter
     def account_number(self, account_number):
@@ -44,14 +42,15 @@ class SavingsAccount(Account):
             f"Saldo: {self.__balance}"
         )
 
-    def add_money(self, add_balance):
+    def add_money(self, add_balance:float):
         if add_balance > 0:
             self.__balance += add_balance
             print('Saldo Atualizado!')
         else:
             print('Você não pode adicionar valores negativos ao saldo!')
 
-    def with_draw_money(self, draw_money):
-        # sacar dinheiro
+
+    def with_draw_money(self, draw_money:float):
+        #sacar dinheiro
         self.__balance -= draw_money
         print('Saque realizado com sucesso!')

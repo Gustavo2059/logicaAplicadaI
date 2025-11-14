@@ -1,7 +1,7 @@
 from televisor import Televisor
 
 class TvComum(Televisor):
-    def __init__(self, marca, modelo, tamanho):
+    def __init__(self, marca, modelo, tamanho:int):
         super().__init__(marca, modelo, tamanho)
         self.numero_canais = 0
         self.volume = 0
